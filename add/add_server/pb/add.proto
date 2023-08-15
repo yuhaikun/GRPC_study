@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "add_client/pb";
+
+package pb;
+
+// 定义服务
+service Adder {
+  rpc Add (AddRequest) returns (AddResponse) {}
+}
+
+// 请求消息
+message AddRequest{
+  int32 x = 1;
+  int32 y = 2;
+}
+
+// 响应消息
+message AddResponse{
+  int32 res = 1;
+}
